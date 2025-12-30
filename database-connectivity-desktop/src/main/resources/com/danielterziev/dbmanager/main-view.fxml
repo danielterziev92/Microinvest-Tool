@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.danielterziev.dbmanager.MainController"
+            style="-fx-background-color: #f5f5f5;">
+
+    <!-- Header -->
+    <top>
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #2c3e50;">
+            <padding>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label text="Database Connection Manager"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label text="Connect to MySQL, PostgreSQL, SQL Server &amp; MariaDB"
+                   style="-fx-font-size: 12px; -fx-text-fill: #ecf0f1;"/>
+        </VBox>
+    </top>
+
+    <!-- Center - Connection Form -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="20">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <VBox spacing="15" maxWidth="650"
+                  style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                <padding>
+                    <Insets top="30" right="40" bottom="20" left="40"/>
+                </padding>
+
+                <!-- Database Type -->
+                <VBox spacing="5">
+                    <Label text="Database Type"
+                           style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <ComboBox fx:id="dbTypeCombo" maxWidth="Infinity"
+                              style="-fx-font-size: 13px;"
+                              onAction="#onDatabaseTypeChanged"/>
+                </VBox>
+
+                <!-- Host -->
+                <VBox spacing="5">
+                    <Label text="Host"
+                           style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <TextField fx:id="hostField" promptText="e.g., localhost or 192.168.1.100"
+                               style="-fx-font-size: 13px;"/>
+                </VBox>
+
+                <!-- Port -->
+                <VBox spacing="5">
+                    <Label text="Port"
+                           style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <TextField fx:id="portField" promptText="Database port"
+                               style="-fx-font-size: 13px;"/>
+                </VBox>
+
+                <!-- Username -->
+                <VBox spacing="5">
+                    <Label text="Username"
+                           style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <TextField fx:id="usernameField" promptText="Database username"
+                               style="-fx-font-size: 13px;"/>
+                </VBox>
+
+                <!-- Password -->
+                <VBox spacing="5">
+                    <Label text="Password"
+                           style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <PasswordField fx:id="passwordField" promptText="Database password"
+                                   style="-fx-font-size: 13px;"/>
+                </VBox>
+
+                <!-- Separator -->
+                <Separator>
+                    <VBox.margin>
+                        <Insets top="5" bottom="5"/>
+                    </VBox.margin>
+                </Separator>
+
+                <!-- Load Databases Button -->
+                <Button fx:id="loadDbButton" text="Connect &amp; Load Databases"
+                        maxWidth="Infinity"
+                        style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5;"
+                        onAction="#onLoadDatabases"/>
+
+                <!-- Status Label -->
+                <Label fx:id="statusLabel" wrapText="true" maxWidth="Infinity"
+                       style="-fx-font-size: 12px; -fx-padding: 5;"/>
+
+                <!-- Database Selection -->
+                <VBox spacing="5">
+                    <Label text="Select Database"
+                           style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <ComboBox fx:id="databaseCombo" maxWidth="Infinity"
+                              promptText="First load databases..."
+                              style="-fx-font-size: 13px;"
+                              onAction="#onDatabaseSelected"/>
+                </VBox>
+
+                <!-- Connection URL Preview -->
+                <VBox spacing="5">
+                    <Label text="Connection URL Preview"
+                           style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+                    <Label fx:id="urlPreviewLabel" wrapText="true" maxWidth="Infinity"
+                           style="-fx-font-size: 11px; -fx-text-fill: #16a085; -fx-background-color: #e8f8f5; -fx-padding: 8; -fx-background-radius: 5;"/>
+                </VBox>
+
+                <!-- Separator -->
+                <Separator>
+                    <VBox.margin>
+                        <Insets top="10" bottom="10"/>
+                    </VBox.margin>
+                </Separator>
+
+                <!-- Action Buttons -->
+                <HBox spacing="15" alignment="CENTER">
+                    <padding>
+                        <Insets top="10"/>
+                    </padding>
+                    <Button text="Test Connection" prefWidth="180"
+                            style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5;"
+                            onAction="#onTestConnection"/>
+                    <Button text="Execute Query" prefWidth="180"
+                            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5;"
+                            onAction="#onExecuteQuery"/>
+                </HBox>
+
+            </VBox>
+        </VBox>
+    </center>
+
+    <!-- Bottom - Results Area -->
+    <bottom>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="40" bottom="30" left="40"/>
+            </padding>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Results"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Clear"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 12px; -fx-padding: 5 15; -fx-background-radius: 3;"
+                        onAction="#onClearResults"/>
+            </HBox>
+
+            <TextArea fx:id="resultArea" editable="false" prefHeight="150" wrapText="true"
+                      style="-fx-font-family: 'Courier New'; -fx-font-size: 12px; -fx-control-inner-background: #2c3e50; -fx-text-fill: #ecf0f1;"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>
