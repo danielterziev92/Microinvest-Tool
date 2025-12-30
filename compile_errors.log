@@ -1,0 +1,68 @@
+[2025-12-30 17:13:23] === COMPILATION STARTED ===
+[2025-12-30 17:13:23] Project Root: C:\Users\daniel.terziev\Desktop\SQLServerManager
+[2025-12-30 17:13:23]   Found 1 file(s) in Constants
+[2025-12-30 17:13:23]   Found 8 file(s) in Models
+[2025-12-30 17:13:23]   Found 13 file(s) in Services
+[2025-12-30 17:13:23]   Found 23 file(s) in UI
+[2025-12-30 17:13:23]   Found Program.cs
+[2025-12-30 17:13:23] Total files discovered: 46
+[2025-12-30 17:13:23] Reading: Constants\AppConstants.cs
+[2025-12-30 17:13:23] Reading: Models\FirewallRule.cs
+[2025-12-30 17:13:23] Reading: Models\SectorSizeInfo.cs
+[2025-12-30 17:13:23] Reading: Models\SQLServerHealthCheck.cs
+[2025-12-30 17:13:23] Reading: Models\SQLServerInfo.cs
+[2025-12-30 17:13:23] Reading: Models\SQLServerInstanceDetails.cs
+[2025-12-30 17:13:23] Reading: Models\SqlServerUser.cs
+[2025-12-30 17:13:23] Reading: Models\SQLServerValidation.cs
+[2025-12-30 17:13:23] Reading: Models\TcpIpConfig.cs
+[2025-12-30 17:13:23] Reading: Services\CollationService.cs
+[2025-12-30 17:13:23] Reading: Services\FirewallService.cs
+[2025-12-30 17:13:23] Reading: Services\Interfaces\ILogService.cs
+[2025-12-30 17:13:23] Reading: Services\Interfaces\ISQLServerService.cs
+[2025-12-30 17:13:23] Reading: Services\LogService.cs
+[2025-12-30 17:13:23] Reading: Services\SectorSizeService.cs
+[2025-12-30 17:13:23] Reading: Services\SQLServerDetailsService.cs
+[2025-12-30 17:13:23] Reading: Services\SQLServerService.cs
+[2025-12-30 17:13:23] Reading: Services\TcpIpConfigService.cs
+[2025-12-30 17:13:23] Reading: Services\TcpPortService.cs
+[2025-12-30 17:13:23] Reading: Services\UserManagementService.cs
+[2025-12-30 17:13:23] Reading: Services\ValidationService.cs
+[2025-12-30 17:13:23] Reading: Services\WmiRepairService.cs
+[2025-12-30 17:13:23] Reading: UI\Controls\ThemedButton.cs
+[2025-12-30 17:13:23] Reading: UI\Controls\ThemedCard.cs
+[2025-12-30 17:13:23] Reading: UI\Controls\ThemedLabel.cs
+[2025-12-30 17:13:23] Reading: UI\Controls\ThemedPanel.cs
+[2025-12-30 17:13:23] Reading: UI\Forms\AddSqlUserDialog.cs
+[2025-12-30 17:13:23] Reading: UI\Forms\AddWindowsUserDialog.cs
+[2025-12-30 17:13:23] Reading: UI\Forms\BaseForm.cs
+[2025-12-30 17:13:23] Reading: UI\Forms\ChangePasswordDialog.cs
+[2025-12-30 17:13:23] Reading: UI\Forms\EditRolesDialog.cs
+[2025-12-30 17:13:23] Reading: UI\Forms\FormLayoutBuilder.cs
+[2025-12-30 17:13:23] Reading: UI\Forms\InputDialog.cs
+[2025-12-30 17:13:23] Reading: UI\Forms\InstanceDetailsForm.cs
+[2025-12-30 17:13:23] Reading: UI\Forms\MainForm.cs
+[2025-12-30 17:13:23] Reading: UI\Forms\ThemeSettingsDialog.cs
+[2025-12-30 17:13:23] Reading: UI\Forms\ValidationResultsForm.cs
+[2025-12-30 17:13:23] Reading: UI\Helpers\ContextMenuBuilder.cs
+[2025-12-30 17:13:23] Reading: UI\Helpers\TabBuilder.cs
+[2025-12-30 17:13:23] Reading: UI\Helpers\UIHelper.cs
+[2025-12-30 17:13:23] Reading: UI\IconGenerator.cs
+[2025-12-30 17:13:23] Reading: UI\ThemeManager.cs
+[2025-12-30 17:13:23] Reading: UI\Themes\AppTheme.cs
+[2025-12-30 17:13:23] Reading: UI\Themes\DarkTheme.cs
+[2025-12-30 17:13:23] Reading: UI\Themes\LightTheme.cs
+[2025-12-30 17:13:23] Reading: Program.cs
+[2025-12-30 17:13:23] Unique using statements: 15
+[2025-12-30 17:13:23] Total code blocks: 46
+[2025-12-30 17:13:23] Starting C# compilation...
+[2025-12-30 17:13:23] Using compiler: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
+[2025-12-30 17:13:23] Temp source file: C:\Users\DANIEL~1.TER\AppData\Local\Temp\SQLServerManager_temp.cs
+[2025-12-30 17:13:23] Source file size: 273.5146484375 KB
+[2025-12-30 17:13:23] COMPILER OUTPUT:
+[2025-12-30 17:13:23] c:\Users\daniel.terziev\AppData\Local\Temp\SQLServerManager_temp.cs(7467,81): error CS0426: The type name 'Style' does not exist in the type 'SQLServerManager.UI.Controls.ThemedButton'
+c:\Users\daniel.terziev\AppData\Local\Temp\SQLServerManager_temp.cs(7549,71): error CS0426: The type name 'Style' does not exist in the type 'SQLServerManager.UI.Controls.ThemedButton'
+c:\Users\daniel.terziev\AppData\Local\Temp\SQLServerManager_temp.cs(7467,87): error CS1750: A value of type 'SQLServerManager.UI.Controls.ThemedButton.ButtonStyle' cannot be used as a default parameter because there are no standard conversions to type 'SQLServerManager.UI.Controls.ThemedButton.Style'
+
+[2025-12-30 17:13:23] Temp source kept: C:\Users\DANIEL~1.TER\AppData\Local\Temp\SQLServerManager_temp.cs
+[2025-12-30 17:13:23] === COMPILATION FAILED ===
+[2025-12-30 17:13:23] Error: Compilation failed with exit code 1
